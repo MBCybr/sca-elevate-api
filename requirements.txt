@@ -1,0 +1,3 @@
+requests
+ark-sdk-python
+python-dotenv
