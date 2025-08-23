@@ -23,6 +23,7 @@ You must provide your tenant API base URL in the format:
 ```
 https://<subdomain>.sca.cyberark.cloud/api
 ```
+Replace `<subdomain>` with your actual tenant (e.g., `ACMECORP`).
 
 ### Option 1: Environment Variable (recommended)
 
