@@ -29,19 +29,19 @@ https://<subdomain>.sca.cyberark.cloud/api
 **Windows PowerShell (session only):**
 
 ```powershell
-$env:CYBERARK_API_BASE_URL="https://mytenant.sca.cyberark.cloud/api"
+$env:CYBERARK_API_BASE_URL="https://<subdomain>.sca.cyberark.cloud/api"
 ```
 
 **Windows PowerShell (persistent):**
 
 ```powershell
-setx CYBERARK_API_BASE_URL "https://mytenant.sca.cyberark.cloud/api"
+setx CYBERARK_API_BASE_URL "https://<subdomain>.sca.cyberark.cloud/api"
 ```
 
 **macOS/Linux (bash/zsh):**
 
 ```bash
-export CYBERARK_API_BASE_URL="https://mytenant.sca.cyberark.cloud/api"
+export CYBERARK_API_BASE_URL="https://<subdomain>.sca.cyberark.cloud/api"
 ```
 
 ### Option 2: `.env` File
@@ -49,7 +49,7 @@ export CYBERARK_API_BASE_URL="https://mytenant.sca.cyberark.cloud/api"
 If you install `python-dotenv`, you can create a `.env` file in your repo:
 
 ```
-CYBERARK_API_BASE_URL=https://mytenant.sca.cyberark.cloud/api
+CYBERARK_API_BASE_URL=https://<subdomain>.sca.cyberark.cloud/api
 ```
 
 Add `.env` to `.gitignore` so the real value never gets committed.
