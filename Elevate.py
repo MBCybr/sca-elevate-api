@@ -1,19 +1,27 @@
 import os
-import json
-import configparser
-import requests
 import sys
 import time
+import json
+import configparser
 from typing import Optional
+
+import requests
+from dotenv import load_dotenv
 
 from ark_sdk_python.auth import ArkISPAuth
 from ark_sdk_python.models.ark_profile import ArkProfile
 from ark_sdk_python.models.ark_exceptions import ArkAuthException
 
+# Load variables from .env file into environment
+load_dotenv()
+
 # --- Config ---
 API_BASE_URL = os.getenv("CYBERARK_API_BASE_URL")
 if not (API_BASE_URL and API_BASE_URL.startswith("https://") and API_BASE_URL.rstrip("/").endswith("/api")):
-    raise SystemExit("Set CYBERARK_API_BASE_URL (expected format: https://<subdomain>.sca.cyberark.cloud/api)")
+    raise SystemExit(
+        "Set CYBERARK_API_BASE_URL (expected format: https://<subdomain>.sca.cyberark.cloud/api)"
+    )
+
 
 def flush_stdin():
     if sys.platform == "win32":
