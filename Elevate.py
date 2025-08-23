@@ -10,7 +10,10 @@ from ark_sdk_python.auth import ArkISPAuth
 from ark_sdk_python.models.ark_profile import ArkProfile
 from ark_sdk_python.models.ark_exceptions import ArkAuthException
 
-API_BASE_URL = "https://<yoursubdomain>.sca.cyberark.cloud/api"
+# --- Config ---
+API_BASE_URL = os.getenv("CYBERARK_API_BASE_URL")
+if not (API_BASE_URL and API_BASE_URL.startswith("https://") and API_BASE_URL.rstrip("/").endswith("/api")):
+    raise SystemExit("Set CYBERARK_API_BASE_URL (expected format: https://<subdomain>.sca.cyberark.cloud/api)")
 
 def flush_stdin():
     if sys.platform == "win32":
@@ -110,7 +113,7 @@ def main():
         print("No eligible roles found.")
         return
 
-    # Always prompt, with friendlier text when there's only one role
+    # Always prompt, even if only one role
     print(f"Select a role to elevate access for {csp}:")
     for idx, role_info in enumerate(roles, start=1):
         role = role_info.get("roleInfo", {})
