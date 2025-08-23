@@ -54,6 +54,18 @@ CYBERARK_API_BASE_URL=https://mytenant.sca.cyberark.cloud/api
 
 Add `.env` to `.gitignore` so the real value never gets committed.
 
+### Quick start with `.env.example`
+
+This repo includes a `.env.example` file as a template.  
+To use it:
+
+- Copy it to `.env`  
+  ```bash
+  cp .env.example .env   # Linux/macOS
+  copy .env.example .env # Windows PowerShell
+  ```
+- Edit `.env` and set your tenant URL (replace `<subdomain>`).
+
 ---
 
 ## Usage
