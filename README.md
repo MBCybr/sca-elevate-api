@@ -2,13 +2,22 @@
 
 A Python CLI for authenticating with CyberArk Identity Security Platform (ISP) and elevating access to cloud roles (AWS, Azure, GCP).
 
+> ⚠️ **Important:** This CLI depends on CyberArk's `ark-sdk-python`.  
+> Before using this script, you must:
+> - Install `ark-sdk-python>=2.1.0`
+> - Configure your Ark profile using `ark configure`
+> - Verify authentication works using `ark login`
+
+The script uses your saved Ark profile to authenticate and retrieve eligible roles.
+
 ## Requirements
 
-- Python 3.10+
+ Python 3.13+ (tested; not officially supported by CyberArk yet)
 - Dependencies:
-  - `requests`
-  - `ark-sdk-python`
-  - *(optional)* `python-dotenv` if you want to use a `.env` file
+  - `requests==2.32.5`
+  - `ark-sdk-python>=2.1.0`
+  - *(optional)* `python-dotenv>=1.0.0` if you want to use a `.env` file
+
 
 Install dependencies with:
 
