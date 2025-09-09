@@ -78,7 +78,8 @@ def authenticate_with_profile(profile_name) -> Optional[str]:
 
 def get_roles(csp, headers):
     url = f"{API_BASE_URL}/access/{csp}/eligibility"
-    resp = requests.get(url, headers=headers, timeout=30)
+    params = {"limit": 50}  # Increase this to get more roles in one call
+    resp = requests.get(url, headers=headers, params=params, timeout=30)
     resp.raise_for_status()
     return resp.json()
 
