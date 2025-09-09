@@ -15,7 +15,7 @@ The script uses your saved Ark profile to authenticate and retrieve eligible rol
  Python 3.13+ (tested; not officially supported by CyberArk yet)
 - Dependencies:
   - `requests==2.32.5`
-  - `ark-sdk-python>=2.1.0`
+  - `ark-sdk-python>=2.1.3`
   - *(optional)* `python-dotenv>=1.0.0` if you want to use a `.env` file
 
 
