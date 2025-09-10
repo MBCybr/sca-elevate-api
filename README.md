@@ -1,14 +1,20 @@
 # SCA Elevate CLI
 
-A Python CLI for authenticating with CyberArk Identity Security Platform (ISP) and elevating access to cloud roles (AWS, Azure, GCP).
+A Python CLI for authenticating with CyberArk Identity Security Platform (ISP) and elevating access to cloud roles (AWS, Azure, and GCP).
 
 > ⚠️ **Important:** This CLI depends on CyberArk's `ark-sdk-python`.  
 > Before using this script, you must:
-> - Install `ark-sdk-python>=2.1.0`
+> - Install `ark-sdk-python>=2.1.3`
 > - Configure your Ark profile using `ark configure`
 > - Verify authentication works using `ark login`
 
 The script uses your saved Ark profile to authenticate and retrieve eligible roles.
+
+## Demo
+
+![SCA AWS CLI Demo](assets/sca-aws-cli-demo.gif)
+
+This demo shows a user who does not have static access to the AWS CLI. By using this script, the user can authenticate to CyberArk Secure Cloud Access (SCA), select from their available roles (as defined by policy), and automatically inject temporary AWS credentials into their local AWS config — enabling secure, role-based CLI access without needing long-term credentials. 
 
 ## Requirements
 
